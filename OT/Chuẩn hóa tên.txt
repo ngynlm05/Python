@@ -1,0 +1,8 @@
+def chuan_hoa_ten(str):
+    str = " ".join(str.split())
+    str = str.title()
+    return str
+
+input = input().strip()
+
+print(chuan_hoa_ten(input))

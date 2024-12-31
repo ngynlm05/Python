@@ -1,0 +1,32 @@
+try:
+    bieu_thuc = input().strip()
+
+    for op in ['+', '-', '*', '/', '%']:
+        if op in bieu_thuc:
+            x, y = bieu_thuc.split(op)
+            x = int(x.strip())
+            y = int(y.strip())
+            if op == '+':
+                ket_qua = x + y
+            elif op == '-':
+                ket_qua = x - y
+            elif op == '*':
+                ket_qua = x * y
+            elif op == '/':
+                if y == 0:
+                    print("error")
+                    break
+                ket_qua = x / y
+            elif op == '%':
+                if y == 0:
+                    print("error")
+                    break
+                ket_qua = x % y
+
+            print("{:.2f}".format(ket_qua))
+            break
+
+    else:
+        print("error")
+except:
+    print("error")

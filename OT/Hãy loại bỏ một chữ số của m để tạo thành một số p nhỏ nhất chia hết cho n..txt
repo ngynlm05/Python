@@ -1,0 +1,15 @@
+def tim_so_chia_het(m, n):
+    m_str = str(m) 
+    p_min = None  
+    
+    for i in range(len(m_str)):
+        p = int(m_str[:i] + m_str[i+1:])
+        if p % n == 0:
+            if p_min is None or p < p_min:
+                p_min = p
+    if p_min is None:
+        return "impossible"
+    return p_min
+
+m, n = map(int, input().split())
+print(tim_so_chia_het(m, n))

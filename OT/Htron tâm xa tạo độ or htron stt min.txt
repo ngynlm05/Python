@@ -1,0 +1,29 @@
+import math
+
+def HTronXaGocNhat(n):
+    XaNhat = -1
+    Htron = None
+
+    for _ in range(n):
+        SoLuong, x, y, r = input().split()
+        SoLuong = int(SoLuong)
+        x = int(x)
+        y = int(y)
+        r = float(r)
+
+        KhoangCach = math.sqrt(x ** 2 + y ** 2)
+
+        if KhoangCach > XaNhat:
+            XaNhat = KhoangCach
+            Htron = (SoLuong, x, y, r)
+
+    return Htron
+
+
+n = int(input())
+
+KQ = HTronXaGocNhat(n)
+
+if KQ:
+    SoLuong, x, y, r = KQ
+    print("{} {} {} {:.3f}".format(SoLuong, x, y, r))

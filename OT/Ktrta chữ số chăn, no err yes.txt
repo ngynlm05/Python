@@ -1,0 +1,15 @@
+def SoChan(n):
+    for so in str(n):  
+        if int(so) % 2 != 0: 
+            return False
+    return True
+
+x, y, z = map(int, input().split())
+
+for n in [x, y, z]:
+    if n < 0:
+        print("Error", end=" ")
+    elif SoChan(n):
+        print("Yes", end=" ")
+    else:
+        print("No", end=" ")

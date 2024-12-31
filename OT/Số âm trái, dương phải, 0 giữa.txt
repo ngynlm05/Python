@@ -1,0 +1,20 @@
+import re
+
+n = input()
+arr = list(map(int, re.findall(r'-?\d+', n)))
+
+So_Am = []
+So_Duong = []
+
+for x in arr:
+    if x < 0:
+        So_Am.append(x)
+    else:
+        So_Duong.append(x)
+
+So_Am.sort(reverse=True)
+So_Duong.sort()
+
+KQ = So_Am + So_Duong
+
+print(" ".join(map(str, KQ)))

@@ -1,0 +1,21 @@
+def TimKiem(n):
+    max = -1
+    KH = None
+
+    for _ in range(n):
+        dai, rong, cao = map(float, input().split())
+        thanh_phan = dai * rong * cao
+
+        if thanh_phan > max:
+            max = thanh_phan
+            KH = (dai, rong, cao, thanh_phan)
+    return KH
+
+
+n = int(input())
+
+KhoiHopLonNhat = TimKiem(n)
+
+if KhoiHopLonNhat:
+    dai, rong, cao, thanh_phan = KhoiHopLonNhat
+    print("{:.1f} {:.1f} {:.1f} {:.1f}".format(dai, rong, cao, thanh_phan))

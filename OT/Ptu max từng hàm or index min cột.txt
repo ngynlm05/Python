@@ -1,0 +1,15 @@
+n, m = map(int, input().split())
+
+Matrix = []
+for i in range(n):
+    row = list(map(int, input().split()))
+    Matrix.append(row)
+
+for i in range(n):
+    MAX = Matrix[i][0]  
+    VT_Max = 0  
+    for j in range(m):
+        if Matrix[i][j] > MAX or (Matrix[i][j] == MAX and j < VT_Max):
+            MAX = Matrix[i][j]
+            VT_Max = j
+    print(i, VT_Max, MAX)

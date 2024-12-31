@@ -1,0 +1,30 @@
+class NhanVien:
+    def __init__(self, ten, ma, hsl, phu_cap):
+        self.ten = ten
+        self.ma = int(ma)
+        self.hsl = float(hsl)
+        self.phu_cap = int(phu_cap)
+        self.luong = self.tinh_luong()
+
+    def tinh_luong(self):
+        return self.hsl * 2000000 + self.phu_cap
+
+    def __str__(self):
+        return "{} {} {:.2f} {} {:.2f}".format(self.ma, self.ten, self.hsl, self.phu_cap, self.luong)
+
+def sap_xep_nhan_vien(DS_NhanVien):
+    return sorted(DS_NhanVien, key=lambda x: x.luong, reverse=True)
+
+n = int(input())
+DS_NhanVien = []
+
+for _ in range(n):
+    ten, ma, hsl, phu_cap = input().split()
+    nhan_vien = NhanVien(ten, ma, hsl, phu_cap)
+    DS_NhanVien.append(nhan_vien)
+
+DS_NhanVien = sap_xep_nhan_vien(DS_NhanVien)
+
+print("Danh sach nhan vien da sap xep: {}".format(n))
+for nv in DS_NhanVien:
+    print(nv)
